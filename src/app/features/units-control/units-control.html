@@ -1,1 +1,105 @@
-<p>units-control works!</p>
+<button class="units-control__button button" [class.is-active]="isOpen" (click)="toggleDropdown()">
+    <img src="images/icon-units.svg" draggable="false" />
+    <span>Units</span>
+    <img src="images/icon-dropdown.svg" draggable="false" />
+</button>
+
+<div class="units-control__dropdown" [class.is-active]="isOpen">
+    <button class="units-toggle button" (click)="toggleUnits()">{{ toggleButtonText }}</button>
+
+    <fieldset class="unit-group">
+        <legend class="unit-group__label">Temperature</legend>
+        <label class="unit-option" [class.is-selected]="selectedTemp === TemperatureUnit.Celsius">
+            <input
+                type="radio"
+                name="temperature"
+                [value]="TemperatureUnit.Celsius"
+                [(ngModel)]="selectedTemp"
+                hidden
+            />
+            <span>Celsius (&deg;C)</span>
+            <img
+                src="images/icon-checkmark.svg"
+                [class.is-visible]="selectedTemp === TemperatureUnit.Celsius"
+            />
+        </label>
+        <label class="unit-option" [class.is-selected]="selectedTemp === TemperatureUnit.Fahrenheit">
+            <input
+                type="radio"
+                name="temperature"
+                [value]="TemperatureUnit.Fahrenheit"
+                [(ngModel)]="selectedTemp"
+                hidden
+            />
+            <span>Fahrenheit (&deg;F)</span>
+            <img
+                src="images/icon-checkmark.svg"
+                [class.is-visible]="selectedTemp === TemperatureUnit.Fahrenheit"
+            />
+        </label>
+    </fieldset>
+
+    <fieldset class="unit-group">
+        <legend class="unit-group__label">Wind Speed</legend>
+        <label class="unit-option" [class.is-selected]="selectedWindSpeed === WindSpeedUnit.KmH">
+            <input
+                type="radio"
+                name="wind-speed"
+                [value]="WindSpeedUnit.KmH"
+                [(ngModel)]="selectedWindSpeed"
+                hidden
+            />
+            <span>km/h</span>
+            <img
+                src="images/icon-checkmark.svg"
+                [class.is-visible]="selectedWindSpeed === WindSpeedUnit.KmH"
+            />
+        </label>
+        <label class="unit-option" [class.is-selected]="selectedWindSpeed === WindSpeedUnit.Mph">
+            <input
+                type="radio"
+                name="wind-speed"
+                [value]="WindSpeedUnit.Mph"
+                [(ngModel)]="selectedWindSpeed"
+                hidden
+            />
+            <span>mph</span>
+            <img
+                src="images/icon-checkmark.svg"
+                [class.is-visible]="selectedWindSpeed === WindSpeedUnit.Mph"
+            />
+        </label>
+    </fieldset>
+
+    <fieldset class="unit-group">
+        <legend class="unit-group__label">Precipitation</legend>
+        <label class="unit-option" [class.is-selected]="selectedPrecipitation === PrecipitationUnit.Millimeters">
+            <input
+                type="radio"
+                name="precipitation"
+                [value]="PrecipitationUnit.Millimeters"
+                [(ngModel)]="selectedPrecipitation"
+                hidden
+            />
+            <span>Millimeters (mm)</span>
+            <img
+                src="images/icon-checkmark.svg"
+                [class.is-visible]="selectedPrecipitation === PrecipitationUnit.Millimeters"
+            />
+        </label>
+        <label class="unit-option" [class.is-selected]="selectedPrecipitation === PrecipitationUnit.Inches">
+            <input
+                type="radio"
+                name="precipitation"
+                [value]="PrecipitationUnit.Inches"
+                [(ngModel)]="selectedPrecipitation"
+                hidden
+            />
+            <span>Inches (in)</span>
+            <img
+                src="images/icon-checkmark.svg"
+                [class.is-visible]="selectedPrecipitation === PrecipitationUnit.Inches"
+            />
+        </label>
+    </fieldset>
+</div>
