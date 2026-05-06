@@ -1,2 +1,20 @@
 @use './styles/normalize';
 @use './styles/reset';
+
+@use 'styles/variables' as vars;
+
+body {
+    background-color: #02012B;
+}
+
+.button {
+    border: none;
+    border-radius: vars.$border-radius;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        outline: 2px solid #fff;
+        outline-offset: 1px;
+    }
+}
