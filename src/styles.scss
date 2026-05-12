@@ -10,11 +10,15 @@ body {
 .button {
     border: none;
     border-radius: vars.$border-radius;
+    line-height: normal;
     cursor: pointer;
+}
 
+input[type="text"],
+.button {
     &:focus,
     &:hover {
         outline: 2px solid #fff;
-        outline-offset: 1px;
+        outline-offset: 2px;
     }
 }

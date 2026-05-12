@@ -5,5 +5,6 @@ import { Component } from '@angular/core';
     imports: [],
     templateUrl: './search.html',
     styleUrl: './search.scss',
+    host: { class: 'search' }
 })
 export class Search {}
